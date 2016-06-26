@@ -1,0 +1,60 @@
+{
+  "name": "get-mention",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: meteorcampnyc-twitter-feed",
+  "customName": false,
+  "customRole": false,
+  "handler": "get-mention/handler.handler",
+  "timeout": 30,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": [],
+    "custom": {
+      "optimize": true
+    }
+  },
+  "endpoints": [
+    {
+      "path": "get-mention",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": {
+        "application/json": ""
+      },
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
+          "responseTemplates": {
+            "application/json;charset=UTF-8": ""
+          }
+        }
+      }
+    }
+  ],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "CONSUMER_KEY": "${CONSUMER_KEY}",
+    "CONSUMER_SECRET": "${CONSUMER_SECRET}",
+    "ACCESS_TOKEN": "${ACCESS_TOKEN}",
+    "ACCESS_TOKEN_SECRET": "${ACCESS_TOKEN_SECRET}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

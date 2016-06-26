@@ -1,0 +1,7 @@
+{
+  "name": "meteorcampnyc-twitter-feed",
+  "custom": {},
+  "plugins": [
+    "serverless-optimizer-plugin"
+  ]
+}
